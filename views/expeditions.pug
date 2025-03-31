@@ -2,12 +2,6 @@ extends layout
 
 block content
   h1= title
-  doctype html
-html
-  head
-    title Search Results - Expeditions
-  body
-    h1 Expeditions
-    ul
-      each expedition in expeditions
-        li= `${expedition.name} - Destination: ${expedition.destination}, Duration: ${expedition.duration} days`
+  ul
+    each expedition in expeditions
+      li #{expedition.name} - #{expedition.destination} (#{expedition.duration} days)
