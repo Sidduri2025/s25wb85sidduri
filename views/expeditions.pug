@@ -15,12 +15,8 @@ block content
           p Destination: #{expedition.destination}
           p Duration: #{expedition.duration} days
           div(class="buy-button", onclick=`buy(${index})`) Purchase
-
-  //- Add a link to go back to the home page
   br
   a(href='/') Go Back to Home
-
-  //- Include the script at the bottom of the file
   script.
     function buy(index) {
       alert('You purchased item ' + index);
