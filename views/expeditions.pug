@@ -2,16 +2,11 @@ extends layout
 
 block content
   h1= title
-
-  //- Define results array
-  - 
     var results = [
       { name: "Everest Base Camp", destination: "Nepal", duration: 14 },
       { name: "Amazon Rainforest", destination: "Brazil", duration: 10 },
       { name: "Antarctic Voyage", destination: "Antarctica", duration: 21 }
     ];
-
-  //- Outer container for Bootstrap grid
   .container-fluid
     .row
       each expedition, index in results
@@ -19,7 +14,6 @@ block content
           h3 #{expedition.name}
           p Destination: #{expedition.destination}
           p Duration: #{expedition.duration} days
-          //- Add an onclick event to call the buy function with the current index
           div(class="buy-button", onclick=`buy(${index})`) Purchase
 
   //- Add a link to go back to the home page
