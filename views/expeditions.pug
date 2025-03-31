@@ -4,7 +4,7 @@ block content
   h1= title
 
   //- Define results array
-  -
+  - 
     var results = [
       { name: "Everest Base Camp", destination: "Nepal", duration: 14 },
       { name: "Amazon Rainforest", destination: "Brazil", duration: 10 },
@@ -20,3 +20,6 @@ block content
           p Destination: #{expedition.destination}
           p Duration: #{expedition.duration} days
 
+  //- Add a link to go back to the home page
+  br
+  a(href='/') Go Back to Home
