@@ -14,12 +14,20 @@ block content
   //- Outer container for Bootstrap grid
   .container-fluid
     .row
-      each expedition in results
-        .col-sm-2
+      each expedition, index in results
+        .col-sm-4
           h3 #{expedition.name}
           p Destination: #{expedition.destination}
           p Duration: #{expedition.duration} days
+          //- Add an onclick event to call the buy function with the current index
+          div(class="buy-button", onclick=`buy(${index})`) Purchase
 
   //- Add a link to go back to the home page
   br
   a(href='/') Go Back to Home
+
+  //- Include the script at the bottom of the file
+  script.
+    function buy(index) {
+      alert('You purchased item ' + index);
+    }
