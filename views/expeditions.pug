@@ -2,6 +2,21 @@ extends layout
 
 block content
   h1= title
-  ul
-    each expedition in expeditions
-      li #{expedition.name} - #{expedition.destination} (#{expedition.duration} days)
+
+  //- Define results array
+  -
+    var results = [
+      { name: "Everest Base Camp", destination: "Nepal", duration: 14 },
+      { name: "Amazon Rainforest", destination: "Brazil", duration: 10 },
+      { name: "Antarctic Voyage", destination: "Antarctica", duration: 21 }
+    ];
+
+  //- Outer container for Bootstrap grid
+  .container-fluid
+    .row
+      each expedition in results
+        .col-sm-2
+          h3 #{expedition.name}
+          p Destination: #{expedition.destination}
+          p Duration: #{expedition.duration} days
+
